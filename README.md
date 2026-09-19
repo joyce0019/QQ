@@ -46,7 +46,7 @@ npm run dev
 
 ## Netlify 部署
 
-仓库根目录的 `netlify.toml` 会运行 `npm run build:standalone`，并发布 `netlify-dist/`。构建脚本同时生成 `netlify-dist/index.html` 与 `netlify-dist/wardrobe.html`，因此 Netlify 根网址和原有 `/wardrobe.html` 地址都会直接打开同一个最新版。不要在 Netlify 控制台把发布目录改回 Next.js 的构建输出。
+仓库根目录的 `netlify.toml` 会运行 `npm run build:standalone`，跳过自动识别的 Next.js Runtime，并发布 `netlify-dist/`。构建脚本同时生成 `netlify-dist/index.html` 与 `netlify-dist/wardrobe.html`，因此 Netlify 根网址和原有 `/wardrobe.html` 地址都会直接打开同一个最新版。不要在 Netlify 控制台把发布目录改回 Next.js 的构建输出。
 
 ## 目录
 
