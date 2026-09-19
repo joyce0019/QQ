@@ -17,7 +17,8 @@ const [template, styles, minimal, app, translations] = await Promise.all([
 const script = `const ASSETS=${JSON.stringify(assets)};\nconst LEGACY_ASSETS=${JSON.stringify(legacyAssets)};\nconst TRANSLATIONS=${JSON.stringify(JSON.parse(translations))};\n${app}`;
 const html = template.replace('{{STYLES}}', () => styles + '\n' + minimal).replace('{{SCRIPT}}', () => script.replace(/<\/script/gi, '<\\/script'));
 await mkdir(path.join(root, 'deliverables'), { recursive: true });
-for (const output of ['deliverables/我的电子衣橱.html', 'public/wardrobe.html']) {
+await mkdir(path.join(root, 'netlify-dist'), { recursive: true });
+for (const output of ['deliverables/我的电子衣橱.html', 'public/wardrobe.html', 'netlify-dist/index.html', 'netlify-dist/wardrobe.html']) {
   await writeFile(path.join(root, output), html);
 }
 console.log(`Generated standalone HTML with ${Object.keys(assets).length} embedded images.`);

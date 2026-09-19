@@ -44,6 +44,10 @@ npm run dev
 
 最新完整版本访问 `http://localhost:3000/wardrobe.html`。Next.js 版本的 `/`、`/wardrobe`、`/outfits` 和 `/inspiration` 保留上一阶段的核心流程；今日记录、“我的”、拍照分流与衣橱 V0.2 在单文件版本中。
 
+## Netlify 部署
+
+仓库根目录的 `netlify.toml` 会运行 `npm run build:standalone`，并发布 `netlify-dist/`。构建脚本同时生成 `netlify-dist/index.html` 与 `netlify-dist/wardrobe.html`，因此 Netlify 根网址和原有 `/wardrobe.html` 地址都会直接打开同一个最新版。不要在 Netlify 控制台把发布目录改回 Next.js 的构建输出。
+
 ## 目录
 
 ```text

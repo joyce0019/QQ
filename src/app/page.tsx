@@ -1,2 +1,5 @@
-import { Dashboard } from "@/features/wardrobe/App";
-export default function Page() { return <Dashboard/>; }
+import { redirect } from "next/navigation";
+
+export default function Page() {
+  redirect("/wardrobe.html");
+}
